@@ -8,7 +8,7 @@ class Group(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(default='first_group', unique=True)
     description = models.TextField()
-    
+
     def __str__(self) -> str:
         return self.title
 
@@ -27,6 +27,3 @@ class Post(models.Model):
         blank=True,
         null=True
     )
-
-
-
