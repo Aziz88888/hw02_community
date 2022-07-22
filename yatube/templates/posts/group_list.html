@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %} Записи сообщества Лев Толстой - зеркало русской революции. {% endblock title %}
+{% block content%}
+  <!-- класс py-5 создает отступы сверху и снизу блока -->
+  {% for post in posts %}
+  <ul>
+    <li>
+      Автор: {{ post.author.get_full_name }}
+    </li>
+    <li>
+      Дата публикации: {{ post.pub_date|date:"d E Y" }}
+    </li>
+  </ul>
+  <p>{{ post.text }}</p>    
+  {% if not forloop.last %}<hr>{% endif %}
+{% endfor %}
+{% endblock content%}
